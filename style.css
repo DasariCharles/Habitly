@@ -1,0 +1,489 @@
+:root {
+    --background: #0b1220;
+    --card: #111c2e;
+    --soft: #17243a;
+    --text: #edf4f5;
+    --muted: #91a2b8;
+    --accent: #35c6a0;
+    --border: #26364d;
+}
+
+body.light {
+    --background: #f2f6f7;
+    --card: #ffffff;
+    --soft: #f4f8f8;
+    --text: #172b35;
+    --muted: #687c85;
+    --accent: #159b7b;
+    --border: #dce7e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-container {
+    width: min(940px, calc(100% - 32px));
+    margin: auto;
+}
+
+.navbar {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 28px;
+    margin: 0;
+}
+
+.logo span,
+footer span {
+    color: var(--accent);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.current-date {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--text);
+}
+
+.welcome-section {
+    margin: 25px 0;
+}
+
+.quote-box {
+    padding: 24px;
+    border-left: 4px solid var(--accent);
+    border-radius: 14px;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.quote-box h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+#dailyQuote {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 15px 0 8px;
+}
+
+#quoteAuthor {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    padding: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.stat-card p {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.panel {
+    padding: 24px;
+    margin: 18px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.section-label {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0 0 7px;
+}
+
+.panel h2 {
+    margin: 0 0 18px;
+    font-size: 21px;
+}
+
+#habitForm {
+    display: flex;
+    gap: 10px;
+}
+
+#habitInput {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--soft);
+    color: var(--text);
+    outline: none;
+}
+
+#habitInput:focus {
+    border-color: var(--accent);
+}
+
+.add-btn {
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #06251d;
+    font-weight: bold;
+}
+
+.emoji-selection {
+    display: flex;
+    gap: 9px;
+    margin-top: 15px;
+}
+
+.emoji-option {
+    width: 39px;
+    height: 39px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--soft);
+    font-size: 18px;
+}
+
+.emoji-option.selected {
+    border-color: var(--accent);
+    background: rgba(53, 198, 160, 0.15);
+}
+
+.form-message {
+    min-height: 17px;
+    margin: 10px 0 0;
+    color: var(--accent);
+    font-size: 12px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-heading h2 {
+    margin-bottom: 18px;
+}
+
+.chart-label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.weekly-chart {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 12px;
+    padding-top: 10px;
+}
+
+.chart-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+.chart-percent,
+.chart-name {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.chart-track {
+    width: min(100%, 45px);
+    height: 115px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--soft);
+}
+
+.chart-fill {
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    background: linear-gradient(180deg, #49dcb3, #159b7b);
+    border-radius: 8px 8px 0 0;
+    transition: height 0.4s ease;
+}
+
+.chart-day.today .chart-name {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.chart-day.today .chart-track {
+    border-color: var(--accent);
+}
+
+.habits-heading {
+    align-items: flex-end;
+}
+
+#habitTotal {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.habit-filters {
+    display: flex;
+    gap: 5px;
+    padding: 4px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--soft);
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: #06251d;
+    font-weight: bold;
+}
+
+.habit-list {
+    display: grid;
+    gap: 12px;
+}
+
+.habit-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--soft);
+}
+
+.habit-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.habit-emoji {
+    font-size: 23px;
+}
+
+.habit-name {
+    margin: 0 0 5px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.habit-streak {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.delete-button {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 23px;
+}
+
+.complete-button {
+    padding: 10px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.complete-button.done {
+    background: rgba(53, 198, 160, 0.15);
+}
+
+.empty-state {
+    display: none;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+.empty-state.show {
+    display: block;
+}
+
+.empty-state div {
+    font-size: 35px;
+}
+
+.empty-state h3 {
+    margin: 10px 0 5px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.reset-btn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    color: var(--text);
+    border-color: var(--accent);
+}
+
+@media (max-width: 650px) {
+    .stats-section {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 12px 8px;
+    }
+
+    .stat-card h2 {
+        font-size: 18px;
+    }
+
+    .stat-card p {
+        font-size: 10px;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    #habitForm {
+        flex-direction: column;
+    }
+
+    .add-btn {
+        min-height: 43px;
+    }
+
+    .habits-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .habit-filters {
+        width: 100%;
+    }
+
+    .filter-btn {
+        flex: 1;
+    }
+
+    .habit-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .complete-button {
+        width: 100%;
+    }
+
+    .weekly-chart {
+        gap: 5px;
+    }
+}

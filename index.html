@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitly - Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app-container">
+
+        <header class="navbar">
+            <h1 class="logo">Habitly<span>.</span></h1>
+
+            <div class="nav-right">
+                <p id="currentDate" class="current-Date"></p>
+                <button id="themeToggle" class="theme-btn" type="button">☀️</button>
+            </div>
+        </header>
+
+        <section class="welcome-section">
+            <div class="quote-box">
+                <h3>Today's Motivation</h3>
+                <p id="dailyQuote">Loading motivation...</p>
+                <span id="quoteAuthor"></span>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-card">
+                <p>Done Today</p>
+                <h2 id="completedCount">0/0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Best Streak</p>
+                <h2 id="bestStreak">0 Days</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Week Rate</p>
+                <h2 id="weeklyProgress">0%</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <p class="section-label">MAKE IT HAPPEN</p>
+            <h2>Add a New Habit</h2>
+
+            <form id="habitForm">
+                <input
+                    type="text"
+                    id="habitInput"
+                    placeholder="Enter your new habit..."
+                    maxlength="35"
+                    required
+                >
+                <button type="submit" class="add-btn">+ Add Habit</button>
+            </form>
+
+            <div class="emoji-selection">
+                <button type="button" class="emoji-option selected" data-emoji="💧">💧</button>
+                <button type="button" class="emoji-option" data-emoji="📚">📚</button>
+                <button type="button" class="emoji-option" data-emoji="🏃">🏃</button>
+                <button type="button" class="emoji-option" data-emoji="🧘">🧘</button>
+                <button type="button" class="emoji-option" data-emoji="💻">💻</button>
+                <button type="button" class="emoji-option" data-emoji="🌱">🌱</button>
+                <button type="button" class="emoji-option" data-emoji="😴">😴</button>
+            </div>
+
+            <p id="formMessage" class="form-message"></p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">YOUR CONSISTENCY</p>
+                    <h2>Weekly Progress</h2>
+                </div>
+                <span class="chart-label">● Completion</span>
+            </div>
+
+            <div id="weeklyChart" class="weekly-chart"></div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading habits-heading">
+                <div>
+                    <p class="section-label">KEEP SHOWING UP</p>
+                    <h2>My Habits <span id="habitTotal">0</span></h2>
+                </div>
+
+                <div class="habit-filters">
+                    <button class="filter-btn active" data-filter="all" type="button">All</button>
+                    <button class="filter-btn" data-filter="done" type="button">Completed</button>
+                    <button class="filter-btn" data-filter="pending" type="button">Pending</button>
+                </div>
+            </div>
+
+            <div id="habitList" class="habit-list"></div>
+
+            <div id="emptyState" class="empty-state">
+                <div>🌿</div>
+                <h3>No habits added yet!</h3>
+                <p>Start your journey by adding your first habit.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+    <p>
+        Built with the CodGen Frontend Internship |
+        <a href="https://codgen.in/" target="_blank">
+            codgen.in
+        </a>
+        
+    </p>
+    
+
+    <button id="resetDemo" class="reset-btn">
+        Reset demo data <span>♥</span>
+    </button>
+</footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
